@@ -4,11 +4,18 @@ const app = express();
 const apiRouter = require("./api/routes/");
 const dbConfig = require("./api/config/db.config");
 const globalConfig = require("./api/config/global.config");
+const cors = require("cors");
 
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
     extended: true,
+  })
+);
+
+app.use(
+  cors({
+    origin: "*",
   })
 );
 
